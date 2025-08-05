@@ -11,7 +11,7 @@ import Login from "./pages/auth/Login.jsx";
 import Signup from "./pages/auth/Signup.jsx";
 import Tasks from "./pages/Tasks.jsx";
 import { PersistGate } from "redux-persist/integration/react";
-import PrivateRoute from "./hooks/privateRoute.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
