@@ -1,6 +1,6 @@
 export const createTask = async (title, description, dueDate, priority, token) => {
   try {
-    const response = await fetch('http://localhost:4000/api/tasks', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/tasks`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ export const createTask = async (title, description, dueDate, priority, token) =
 
 export const deleteTask = async (id, token) => {
   try {
-    const response = await fetch(`http://localhost:4000/api/tasks/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/tasks/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -36,7 +36,7 @@ export const deleteTask = async (id, token) => {
 
 export const updateTask = async (id, title, description, dueDate, priority, status, token) => {
   try {
-    const response = await fetch(`http://localhost:4000/api/tasks/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/tasks/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export const updateTask = async (id, title, description, dueDate, priority, stat
 
 export const fetchTasks = async (token) => {
   try {
-    const response = await fetch('http://localhost:4000/api/tasks', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/tasks`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
